@@ -1,0 +1,100 @@
+# DQT
+## Overview
+DQT (Deep Q-network Testing) is an automatic black-box Android GUI testing approach based on deep reinforcement learning and graph embedding. It leverages advanced graph embedding techniques for states and action encoding, employs a specially designed DQN for state-action evaluation, and conducts curiosity-driven exploration guided by a fine-grained dynamic reward function.
+
+The artifact of DQT can be downloaded from [GoogleDriveShare](https://drive.google.com/drive/folders/1w0XQv8FooDnUDkMUCSKXn_ZtYnE8hy1v?usp=sharing).<br /><br/>
+
+## Publication
+More details about DQT can be achieved in the ICSE 2024 paper "Deeply Reinforcing Android GUI Testing with Deep Reinforcement Learning".<br /><br/>
+
+## File Structure
+```
+DQT
+├── app  The directory for your APKs, an example MyExpenses-r554-debug.apk is provided.
+├── main  The directory for the executable DQT.
+├── result  The directory for storing runtime testing results.
+└── venv  The Python virtual environment.
+```
+
+For directories `app` and `result`, specifying other paths for them in the config file is also feasible.<br />For directory `venv`, you need to build your own Python virtual environment.<br /><br/>
+
+## Experimental Environment
+Here is the experimental environment we have tested.
+#### Operating System
+
+- Ubuntu 18.04
+- Also tested on Ubuntu 22.04
+#### Python Version
+
+- The project is based on Python 3.7.
+   - except for module _system_event_trigger_ which only supports Python 2.7
+- Make sure that Python 3.7 and Python 2.7 are all available in your Ubuntu
+   - It is recommended to install Python 3.7 and Python 2.7 via apt command (e.g., use _ppa:deadsnakes/ppa_ source), thus `/usr/bin/python3.7` and `/usr/bin/python2.7` will be directly available.
+- Build your own Python3.7 virtual environment for the project.
+   - It is recommended to build it under `DQT/venv`.
+   - You may use command `python3.7 -m venv venv`.
+- You may use the provided Python2.7 for module _system_event_trigger_ directly.
+   - While testing the tool on Ubuntu 22.04, this provided virtual environment works well.
+   - You may build your own Python2.7 virtual environment to replace the provided one.
+   - Anyway, make sure `DQT/main/system_event_trigger/venv/bin/python2.7` performs normally. You can check this by directly running it to enter the Python2.7 interactive mode.
+#### Deep Learning Environment
+
+- GPU Driver: 470.161.03 / 525.105.17
+- CUDA: 11.4 / 12.0
+- Torch: 1.10.0+cu113
+#### Android Environment
+
+- Command Line Tool Used: ADB, AAPT, AAPT2
+   - Make sure these tools are available on system variables to support command-line calls
+   - It is recommended to add Android Supports such as _tools_, _platform-tools_, and _build-tools_ to the system path.
+- You may check the availability of these tools by these commands: `adb version`, `aapt version`, `aapt2 version`
+#### Android Emulator
+
+- Device: Google Pixel 2
+- Resultion: 1080*1920
+- Android Version: Android 9.0 (API Level 28)
+- RAM: 4GB
+- VM Heap: 2GB
+- Internal Storage: 8GB
+- SD Card: 1GB
+
+<br/>
+
+## Testing Config (config.yaml in `DQT/main/`)
+
+- ALLOW_CLEAN: Allow the tool to clean app data during testing
+   - Except for some special cases, this config is usually set to `true`.
+   - Special cases need this config to be `false`, possible scenarios include: 
+      - Logged-in apps (apps that have been logged in and you don't want to lose this status while testing)
+      - Database conflicts (avoid duplicate database builds)
+      - Plug-in missing (apps that have been equipped with plug-ins and you don't want to lose them while testing)
+   - Among our 30 experimental apps, these 5 apps are recommended to set `false`: _Signal_ (login), _Tachiyomi_ (prevent plug-in loss), _K9Mail_ (login), _Conversations_ (login), _MoneyManagerEx_ (database problem)
+   - It is recommended to take a snapshot of the emulator to save the initial status before testing
+- APK_LOCATION: The absolute dir path of the APK.
+- APK_NAME: The file name of the App Under Test (AUT). We have provided the app _MyExpenses_ as an example.
+- DEVICE_ID: The device ID for testing (e.g., emulator-5554).
+- RESULT_LOCATION: The absolute dir path for saving runtime testing results.
+- TIME_LIMIT: The testing time in seconds.
+
+<br/>
+
+## Run DQT
+
+1. unzip DQT.zip and enter directory `DQT`
+2. build Python virtual environment
+3. prepare an Android Device (e.g., an Android Emulator), use command `adb devices` to check
+4. enter the Python virtual environment (e.g., `source ./venv/bin/activate`)
+5. edit the config file `DQT/main/config.yaml`
+6. run DQT via a command like `./main/main`
+
+<br/>
+
+## Reference Links
+
+1. Logcat: [https://developer.android.com/studio/command-line/logcat](https://developer.android.com/studio/command-line/logcat)
+2. Emulator: [https://developer.android.com/studio/run/emulator](https://developer.android.com/studio/run/emulator)
+3. Emulator(cmd): [https://developer.android.com/studio/run/emulator-commandline](https://developer.android.com/studio/run/emulator-commandline)
+4. ADB: [https://developer.android.com/studio/command-line/adb](https://developer.android.com/studio/command-line/adb)
+5. AAPT2: [https://developer.android.com/studio/command-line/aapt2](https://developer.android.com/studio/command-line/aapt2)
+6. Python venv: [https://docs.python.org/3.7/tutorial/venv.html](https://docs.python.org/3.7/tutorial/venv.html)
+
