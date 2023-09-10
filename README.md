@@ -39,19 +39,26 @@ Here is the experimental environment we have tested.
    - Anyway, make sure `DQT/main/system_event_trigger/venv/bin/python2.7` performs normally. You can check this by directly running it to enter the Python2.7 interactive mode.
 #### Deep Learning Environment
 
-- GPU Driver: 470.161.03 / 525.105.17
-- CUDA: 11.4 / 12.0
+- GPU Driver: 470.161.03
+- CUDA: 11.4 / 11.8
+   - Remember to add it to the system PATH
+   - Check by command: `nvcc -V`
+- cuDNN: 8.2.4
 - Torch: 1.10.0+cu113
+
+_Note: Pay attention to the version compatibility between GPU Driver, CUDA, and cuDNN._
 #### Android Environment
 
 - Command Line Tool Used: ADB, AAPT, AAPT2
    - Make sure these tools are available on system variables to support command-line calls
    - It is recommended to add Android Supports such as _tools_, _platform-tools_, and _build-tools_ to the system path.
 - You may check the availability of these tools by these commands: `adb version`, `aapt version`, `aapt2 version`
+
+_Note: One convenient way to download these Android tools is via AndroidStudio._
 #### Android Emulator
 
 - Device: Google Pixel 2
-- Resultion: 1080*1920
+- Resolution: 1080*1920
 - Android Version: Android 9.0 (API Level 28)
 - RAM: 4GB
 - VM Heap: 2GB
@@ -80,21 +87,26 @@ Here is the experimental environment we have tested.
 
 ## Run DQT
 
-1. unzip DQT.zip and enter directory `DQT`
-2. build Python virtual environment
-3. prepare an Android Device (e.g., an Android Emulator), use command `adb devices` to check
-4. enter the Python virtual environment (e.g., `source ./venv/bin/activate`)
-5. edit the config file `DQT/main/config.yaml`
-6. run DQT via a command like `./main/main`
+1. Unzip DQT.zip and enter the directory `DQT`
+2. Build a Python virtual environment
+3. Prepare an Android Device (e.g., an Android Emulator), use the command `adb devices` to check
+4. Enter the Python virtual environment (e.g., `source ./venv/bin/activate`)
+5. Edit the config file `DQT/main/config.yaml`
+6. Run DQT via a command like `./main/main`
 
 <br/>
 
 ## Reference Links
 
-1. Logcat: [https://developer.android.com/studio/command-line/logcat](https://developer.android.com/studio/command-line/logcat)
-2. Emulator: [https://developer.android.com/studio/run/emulator](https://developer.android.com/studio/run/emulator)
-3. Emulator(cmd): [https://developer.android.com/studio/run/emulator-commandline](https://developer.android.com/studio/run/emulator-commandline)
-4. ADB: [https://developer.android.com/studio/command-line/adb](https://developer.android.com/studio/command-line/adb)
-5. AAPT2: [https://developer.android.com/studio/command-line/aapt2](https://developer.android.com/studio/command-line/aapt2)
-6. Python venv: [https://docs.python.org/3.7/tutorial/venv.html](https://docs.python.org/3.7/tutorial/venv.html)
+1. Python
+   1. Python venv: [https://docs.python.org/3.7/tutorial/venv.html](https://docs.python.org/3.7/tutorial/venv.html)
+2. Deep Learning
+   1. GPU Driver and CUDA: [https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+   2. CUDA and cuDNN: [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
+3. Android
+   1. Logcat: [https://developer.android.com/studio/command-line/logcat](https://developer.android.com/studio/command-line/logcat)
+   2. Emulator: [https://developer.android.com/studio/run/emulator](https://developer.android.com/studio/run/emulator)
+   3. Emulator(cmd): [https://developer.android.com/studio/run/emulator-commandline](https://developer.android.com/studio/run/emulator-commandline)
+   4. ADB: [https://developer.android.com/studio/command-line/adb](https://developer.android.com/studio/command-line/adb)
+   5. AAPT2: [https://developer.android.com/studio/command-line/aapt2](https://developer.android.com/studio/command-line/aapt2)
 
