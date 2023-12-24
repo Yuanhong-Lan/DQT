@@ -3,10 +3,12 @@
 DQT (Deep Q-network Testing) is an automatic black-box Android GUI testing approach based on deep reinforcement learning and graph embedding. It leverages advanced graph embedding techniques for states and action encoding, employs a specially designed DQN for state-action evaluation, and conducts curiosity-driven exploration guided by a fine-grained dynamic reward function.
 
 The artifact of DQT can be downloaded from [GoogleDriveShare](https://drive.google.com/drive/folders/1w0XQv8FooDnUDkMUCSKXn_ZtYnE8hy1v?usp=sharing).
+
 <br/>
 
 ## Publication
 More details about DQT can be achieved in the ICSE 2024 paper "Deeply Reinforcing Android GUI Testing with Deep Reinforcement Learning".
+
 <br/>
 
 ## File Structure
@@ -20,6 +22,7 @@ DQT
 
 For directories `app` and `result`, specifying other paths for them in the config file is also feasible.
 For directory `venv`, you need to build your own Python virtual environment.
+
 <br/>
 
 ## Experimental Environment
