@@ -7,7 +7,7 @@ The artifact of DQT can be downloaded from [GoogleDriveShare](https://drive.goog
 <br/>
 
 ## Publication
-More details about DQT can be achieved in the ICSE 2024 paper "Deeply Reinforcing Android GUI Testing with Deep Reinforcement Learning".
+More details about DQT can be achieved in the ICSE 2024 paper "[Deeply Reinforcing Android GUI Testing with Deep Reinforcement Learning](https://dl.acm.org/doi/10.1145/3597503.3623344)".
 
 <br/>
 
