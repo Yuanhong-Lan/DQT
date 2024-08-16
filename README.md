@@ -8,6 +8,28 @@ The artifact of DQT can be downloaded from [GoogleDriveShare](https://drive.goog
 
 ## Publication
 More details about DQT can be achieved in the ICSE 2024 paper "[Deeply Reinforcing Android GUI Testing with Deep Reinforcement Learning](https://dl.acm.org/doi/10.1145/3597503.3623344)".
+```
+@inproceedings{DBLP:conf/icse/LanLLP00L24,
+  author       = {Yuanhong Lan and
+                  Yifei Lu and
+                  Zhong Li and
+                  Minxue Pan and
+                  Wenhua Yang and
+                  Tian Zhang and
+                  Xuandong Li},
+  title        = {Deeply Reinforcing Android {GUI} Testing with Deep Reinforcement Learning},
+  booktitle    = {Proceedings of the 46th {IEEE/ACM} International Conference on Software
+                  Engineering, {ICSE} 2024, Lisbon, Portugal, April 14-20, 2024},
+  pages        = {71:1--71:13},
+  publisher    = {{ACM}},
+  year         = {2024},
+  url          = {https://doi.org/10.1145/3597503.3623344},
+  doi          = {10.1145/3597503.3623344},
+  timestamp    = {Mon, 24 Jun 2024 15:20:25 +0200},
+  biburl       = {https://dblp.org/rec/conf/icse/LanLLP00L24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+```
 
 <br/>
 
@@ -20,8 +42,7 @@ DQT
 └── venv  The Python virtual environment.
 ```
 
-For directories `app` and `result`, specifying other paths for them in the config file is also feasible.
-For directory `venv`, you need to build your own Python virtual environment.
+For directories `app` and `result`, specifying other paths for them in the config file is also feasible.<br />For directory `venv`, you need to build your own Python virtual environment.
 
 <br/>
 
