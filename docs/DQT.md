@@ -115,5 +115,12 @@ _Note: One convenient way to download these Android tools is via AndroidStudio._
 6. Run DQT via a command like `./main/main`
 
 
-
 <br/>
+
+
+## Additional Note
+_DQT has been implemented in large enterprises._
+
+_At this stage, due to the restrictions of commercial contracts, the full source code cannot be published._
+
+_We apologize for the inconvenience and appreciate your understanding._

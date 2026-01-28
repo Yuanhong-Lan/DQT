@@ -65,15 +65,4 @@ More details about DQT can be achieved in the ICSE 2024 paper "[Deeply Reinforci
     5. AAPT2: [https://developer.android.com/studio/command-line/aapt2](https://developer.android.com/studio/command-line/aapt2)
 
 
-<br/>
-
-
-## Additional Note
-_DQT has been implemented in large enterprises._
-
-_At this stage, due to the restrictions of commercial contracts, the full source code cannot be published._
-
-_We apologize for the inconvenience and appreciate your understanding._
-
-
 

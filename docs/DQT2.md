@@ -136,5 +136,12 @@ _**It is recommended to take a snapshot of the emulator to save the initial stat
 4. Run DQT2 via a command like `./DQT2`
 
 
-
 <br/>
+
+
+## Additional Note
+_DQT2 has been implemented in large enterprises._
+
+_At this stage, due to the restrictions of commercial contracts, the full source code cannot be published._
+
+_We apologize for the inconvenience and appreciate your understanding._
